@@ -1,0 +1,46 @@
+.content {
+  background-blend-mode: screen;
+  font-family: "Calibri";
+  margin: 20px auto 10px;
+  width: 800px;
+  font-family: "Roboto Mono", monospace;
+}
+
+h1 {
+  color: #838383;
+  margin: 20px 20px 5px 20px;
+}
+
+#h1city {
+  font-family: "Zilla Slab Highlight", cursive;
+}
+
+.converter {
+  font-family: "Roboto Slab", serif;
+}
+
+h3 {
+  color: #ad9d9d;
+  margin: 5px 20px;
+  font-size: 18px;
+}
+
+.temp-celsius {
+  color: #838383;
+  font-size: 20px;
+}
+
+.temp-celsius:hover {
+  color: #838383;
+  font-size: 20px;
+}
+
+.temp-fahrenheit {
+  color: #cecece;
+  font-size: 20px;
+}
+
+.temp-fahrenheit:hover {
+  color: #cecece;
+  font-size: 20px;
+}

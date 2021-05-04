@@ -1,17 +1,27 @@
 import './App.css';
-import Weather from "./Weather"
+import Header from "./Header";
+import Form from "./Form";
+import Button from "./Button";
+import Today from "./Today";
+import Forecast from "./Forecast"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>
-          Hello world!
-        </h1>
-        <Weather city="Amsterdam" />
-      </header>
+      <div className="container">
+        <div className="content">
+          <div className="row">
+            <Header />
+            <Form />
+            <Button />
+          </div>
+          <Today />
+          <Forecast />
+          <p className="footer"><a href="https://github.com/Snarkesoor/weather-react" target="_blank">Open-source code</a> by Marloes Oomen 👩🏼‍💻</p>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default App

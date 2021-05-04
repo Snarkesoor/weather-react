@@ -1,4 +1,22 @@
 .App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.content {
+  background-blend-mode: screen;
+  font-family: "Calibri";
+  margin: 20px auto 10px;
+  width: 800px;
+  font-family: "Roboto Mono", monospace;
+}
+
+.footer {
+  margin: 20px 0 0;
+  font-size: 14px;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +53,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
