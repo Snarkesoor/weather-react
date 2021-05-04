@@ -17,7 +17,7 @@ function App() {
           </div>
           <Today />
           <Forecast />
-          <p className="footer"><a href="https://github.com/Snarkesoor/weather-react" target="_blank">Open-source code</a> by Marloes Oomen 👩🏼‍💻</p>
+          <p className="footer"><a href="https://github.com/Snarkesoor/weather-react" rel="noreferrer" target="_blank">Open-source code</a> by Marloes Oomen 👩🏼‍💻</p>
         </div>
       </div>
     </div>

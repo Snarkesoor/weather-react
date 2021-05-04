@@ -9,16 +9,16 @@ export default function Header() {
       <h1>
         <span id="h1city">{city}</span>{" "}
         <sup className="converter">
-          <a className="temp-celsius" id="cel" href="">
+         <span className="temp-celsius" id="cel">
             °C
-          </a>{" "}
+          </span>{" "}
           |
-          <a className="temp-fahrenheit" id="far" href="">
+          <span className="temp-fahrenheit" id="far">
             °F
-          </a>
+          </span>
         </sup>
       </h1>
-      <h3></h3>
+      <h3>Last updated: Tuesday, 20:38</h3>
     </div>
   );
 }
