@@ -3,6 +3,30 @@
   text-align: center;
 }
 
+.converter {
+  font-family: "Roboto Slab", serif;
+}
+
+.temp-celsius {
+  color: #ad9d9d;
+  font-size: 20px;
+}
+
+.temp-celsius:hover {
+  color: #ad9d9d;
+  font-size: 20px;
+}
+
+.temp-fahrenheit {
+  color: #cecece;
+  font-size: 20px;
+}
+
+.temp-fahrenheit:hover {
+  color: #cecece;
+  font-size: 20px;
+}
+
 .date-today {
   color: #ad9d9d;
   margin: 20px 25px 10px 20px;
