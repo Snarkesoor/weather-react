@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather() {
-  let city = "Amsterdam";
+  let [ready, setReady] = useState(false);
+  let [weatherData, setWeatherData] = useState({});
 
-  let apiKey = "6c12bf653a5233b9ac28d0707b11b7e6";
-  let apiUrl = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
+  function handleResponse(response) {
+    setWeatherData({
+      temperature: response.data.main.temp,
+      city: response.data.name
+    });
+    setReady(true);
+  }
+  
+  if (ready) {
+  
   return ( <div>
   <div className="row">
     <div className="col-6">
       <h1>
-        <span id="h1city">{city}</span>
+        <span id="h1city">{weatherData.city}</span>
               </h1>
 
     </div>
@@ -33,7 +41,18 @@ export default function Weather() {
       <button>Current location</button>
     </div>
       </div> 
-  <h3>Last updated: Tuesday, 20:38</h3>
+  <h3>The current temperature is: {Math.round(weatherData.temperature)}°C</h3>
   </div>
-  );
+  ); 
+} else {   
+  let city = "Amsterdam";
+  let apiKey = "6c12bf653a5233b9ac28d0707b11b7e6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(handleResponse);
+
+  return "Loading..."
+}
+
+
 }
