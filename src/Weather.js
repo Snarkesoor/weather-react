@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import Today from "./Today";
+import Forecast from "./Forecast";
+import CurrentDate from "./CurrentDate";
 
-export default function Weather() {
-  let [ready, setReady] = useState(false);
-  let [weatherData, setWeatherData] = useState({});
+export default function Weather(props) {
+  let [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
+    console.log(response.data)
     setWeatherData({
-      temperature: response.data.main.temp,
-      city: response.data.name
+      ready: true,
+      temperature: Math.round(response.data.main.temp),
+      city: response.data.name,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      date: new Date(response.data.dt * 1000)
     });
-    setReady(true);
   }
   
-  if (ready) {
+  if (weatherData.ready) {
   
-  return ( <div>
+  return ( <div><div>
   <div className="row">
     <div className="col-6">
       <h1>
@@ -41,13 +47,15 @@ export default function Weather() {
       <button>Current location</button>
     </div>
       </div> 
-  <h3>The current temperature is: {Math.round(weatherData.temperature)}°C</h3>
+  <h3><CurrentDate date={weatherData.date} /> </h3>
+  </div>
+          <Today data={weatherData} />
+          <Forecast />
   </div>
   ); 
 } else {   
-  let city = "Amsterdam";
   let apiKey = "6c12bf653a5233b9ac28d0707b11b7e6";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(handleResponse);
 

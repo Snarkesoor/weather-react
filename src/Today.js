@@ -1,10 +1,9 @@
 import React from "react";
 import "./Today.css";
 
-export default function Today() {
+export default function Today(props) {
   let weatherToday = {
-    temperature: 15,
-    minimum: 5,
+     minimum: 5,
     humidity: 80,
     windSpeed: 5
   };
@@ -23,7 +22,7 @@ export default function Today() {
       <p className="temp-today">
         <img src="" id="icon-1" alt="" width="50px"></img>
         <br />
-        <span className="temp">{weatherToday.temperature}</span>° |{" "}
+        <span className="temp">{props.data.temperature}</span>° |{" "}
         <span className="min">{weatherToday.minimum}</span>°
       </p>
       <ul className="weather-details">
