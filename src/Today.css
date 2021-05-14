@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+.temp {
+  font-size: 48px;
+}
+
 .converter {
   font-family: "Roboto Mono", monospace;
 }

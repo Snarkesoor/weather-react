@@ -9,6 +9,7 @@
 h1 {
   color: #838383;
   margin: 20px 20px 5px 20px;
+  text-align: left;
 }
 
 #h1city {
@@ -17,7 +18,7 @@ h1 {
 
 h3 {
   color: #ad9d9d;
-  margin: 10px 0 0 30px;
+  margin: 10px 0 0 20px;
   font-size: 18px;
   text-align: left;
 }
