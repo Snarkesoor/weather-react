@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherIcon from "./WeatherIcon"
 import "./Today.css";
 
 export default function Today(props) {
@@ -15,7 +16,7 @@ export default function Today(props) {
         </sup> </p>
 
       <p className="temp-today">
-        <img src="" id="icon-1" alt="" width="50px"></img>
+        <WeatherIcon code={props.data.icon}/>
         <br />
         <span className="temp">{props.data.temperature}</span>° 
       </p>
