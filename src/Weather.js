@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import Today from "./Today";
 import Forecast from "./Forecast";
 import CurrentDate from "./CurrentDate";
+import Temperature from "./Temperature"
 
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
@@ -81,7 +81,7 @@ let [city, setCity] = useState(props.defaultCity);
       </div> 
   <h3><CurrentDate date={weatherData.date} /> </h3>
   </div>
-          <Today data={weatherData} />
+          <Temperature data={weatherData} />
           <Forecast />
   </div>
   ); 

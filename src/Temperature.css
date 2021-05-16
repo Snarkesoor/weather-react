@@ -11,24 +11,21 @@
   font-family: "Roboto Mono", monospace;
 }
 
-.temp-celsius {
-  color: #ad9d9d;
-  font-size: 20px;
-}
-
-.temp-celsius:hover {
-  color: #ad9d9d;
-  font-size: 20px;
-}
-
+.temp-celsius,
 .temp-fahrenheit {
-  color: #cecece;
+  color: #ad9d9d;
+  font-weight: bold;
   font-size: 20px;
 }
 
-.temp-fahrenheit:hover {
-  color: #cecece;
+.temp-link {
+  color: #d3c6c6;
   font-size: 20px;
+}
+
+.temp-link:hover {
+  color: #d3c6c6;
+  font-weight: bold;
 }
 
 .date-today {
