@@ -17,8 +17,10 @@ function convertToCelsius(event) {
 
 if (unit === "celsius") {
     return   (  <div className="today">
-      <p className="date-today">Today's weather:
-        <sup className="converter"> {" "}
+      <p className="temp-today">
+        <WeatherIcon code={props.data.icon} size={120} color={"white"}/>
+        <br />
+        <span className="temp">{props.data.temperature}</span><sup className="converter"> {" "}
         <span className="temp-celsius">
             °C
           </span>{" "}
@@ -26,11 +28,7 @@ if (unit === "celsius") {
           <a href="/" className="temp-link" onClick={convertToFahrenheit}>
             °F
           </a>
-          </sup> </p> 
-      <p className="temp-today">
-        <WeatherIcon code={props.data.icon}/>
-        <br />
-        <span className="temp">{props.data.temperature}</span>° 
+          </sup>
       </p>
       <ul className="weather-details">
         <li>
@@ -43,9 +41,10 @@ if (unit === "celsius") {
     </div> )
     } else { return (
     <div className="today">
-      <p className="date-today">Today's weather:
-        
-<sup className="converter"> {" "}
+      <p className="temp-today">
+        <WeatherIcon code={props.data.icon} size={120} color={"white"}/>
+        <br />
+        <span className="temp">{Math.round(props.data.temperature * 1.8 + 32)}</span><sup className="converter"> {" "}
         <a href="/" className="temp-link" onClick={convertToCelsius}>
             °C
           </a>{" "}
@@ -53,11 +52,7 @@ if (unit === "celsius") {
           <span className="temp-fahrenheit" >
             °F
           </span>
-          </sup> </p>
-      <p className="temp-today">
-        <WeatherIcon code={props.data.icon}/>
-        <br />
-        <span className="temp">{Math.round(props.data.temperature * 1.8 + 32)}</span>° 
+          </sup> 
       </p>
       <ul className="weather-details">
         <li>

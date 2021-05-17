@@ -82,7 +82,7 @@ let [city, setCity] = useState(props.defaultCity);
   <h3><CurrentDate date={weatherData.date} /> </h3>
   </div>
           <Temperature data={weatherData} />
-          <Forecast />
+          <Forecast data={weatherData} />
   </div>
   ); 
 } else {   

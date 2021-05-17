@@ -9,30 +9,26 @@
 
 .converter {
   font-family: "Roboto Mono", monospace;
+  font-size: 24px;
 }
 
 .temp-celsius,
 .temp-fahrenheit {
-  color: #ad9d9d;
+  color: #ffffff;
   font-weight: bold;
-  font-size: 20px;
 }
 
 .temp-link {
-  color: #d3c6c6;
-  font-size: 20px;
+  color: #ffffff;
+  opacity: 0.4;
+  text-decoration: none;
 }
 
 .temp-link:hover {
-  color: #d3c6c6;
+  color: #ffffff;
+  opacity: 1;
   font-weight: bold;
-}
-
-.date-today {
-  color: #ad9d9d;
-  margin: 20px 25px 10px 20px;
-  font-size: 24px;
-  font-family: "Zilla Slab Highlight", cursive;
+  text-decoration: none;
 }
 
 .temp-today {

@@ -15,3 +15,11 @@
   margin: 20px 0 0;
   font-size: 14px;
 }
+
+.date-today {
+  color: #ad9d9d;
+  margin: 20px 25px 0 20px;
+  font-size: 28px;
+  font-family: "Zilla Slab Highlight", cursive;
+  text-align: left;
+}
