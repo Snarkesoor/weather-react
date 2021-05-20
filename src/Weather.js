@@ -18,7 +18,8 @@ let [city, setCity] = useState(props.defaultCity);
       wind: Math.round(response.data.wind.speed * 3.6),
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon
+      icon: response.data.weather[0].icon,
+      coord: response.data.coord
     });
   }
 
