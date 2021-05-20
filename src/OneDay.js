@@ -14,12 +14,13 @@ export default function OneDay(props) {
     return `${dayNumber} ${month}`;
   }
  return    ( 
-        <div>    <p className="date">{day()}</p>
+        <div>    
+            <p className="date">{day()}</p>
              <p className="temp-small">
                   <WeatherIcon code={props.data.weather[0].icon} size={80} color={"#FAB578"}/><br /><span className="max"
                   >{Math.round(props.data.temp.max)}°</span>|<span className="min"
                   >{Math.round(props.data.temp.min)}</span>°</p>
-                  </div>
+         </div>
  )
                    
 }
