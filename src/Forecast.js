@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState }  from "react";
 import "./Forecast.css";
-import WeatherIcon from "./WeatherIcon";
+import OneDay from "./OneDay";
 
 export default function Forecast(props) {
 
@@ -13,29 +13,19 @@ export default function Forecast(props) {
     setForecastData(response.data.daily);
     setLoaded(true);
   }
-
-  function day() {
-    let date = new Date(forecastData[0].dt * 1000);
-
-    let dayNumber = date.getDate();
-
-    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    let month = months[date.getMonth()];
-
-    return `${dayNumber} ${month}`;
-  }
   
   if (loaded) {
-  return (<div className="row" id="forecast">
-                <div className="col">
-
-                  <p className="date">{day()}</p>
-                  <p className="temp-small">
-                  <WeatherIcon code={forecastData[0].weather[0].icon} size={80} color={"#FAB578"}/><br /><span className="max"
-                  >{Math.round(forecastData[0].temp.max)}°</span>|<span className="min"
-                  >{Math.round(forecastData[0].temp.min)}</span>°</p>
-              </div>
-   </div>)
+  return (
+  <div className="row" id="forecast">
+    {forecastData.map(function(dailyForecast, index) {
+      if (index <5) {
+      return ( <div className="col" key={index}>
+         <OneDay data={dailyForecast} />
+         </div>  );
+      }
+      })}
+   </div>
+   )
 } else {
   let lat = props.data.coord.lat;
   let lon = props.data.coord.lon;
